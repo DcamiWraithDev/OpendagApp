@@ -38,7 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.telefoon_Input = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Geboortedatum_datePicker = new System.Windows.Forms.DateTimePicker();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -57,6 +57,7 @@
             // 
             // voornaam_Input
             // 
+            this.voornaam_Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.voornaam_Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.voornaam_Input.Location = new System.Drawing.Point(272, 73);
             this.voornaam_Input.Name = "voornaam_Input";
@@ -85,14 +86,16 @@
             // 
             // achternaam_Input
             // 
+            this.achternaam_Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.achternaam_Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.achternaam_Input.Location = new System.Drawing.Point(272, 117);
+            this.achternaam_Input.Location = new System.Drawing.Point(272, 118);
             this.achternaam_Input.Name = "achternaam_Input";
             this.achternaam_Input.Size = new System.Drawing.Size(350, 38);
             this.achternaam_Input.TabIndex = 3;
             // 
             // email_Input
             // 
+            this.email_Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.email_Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email_Input.Location = new System.Drawing.Point(272, 161);
             this.email_Input.Name = "email_Input";
@@ -121,6 +124,7 @@
             // 
             // telefoon_Input
             // 
+            this.telefoon_Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.telefoon_Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telefoon_Input.Location = new System.Drawing.Point(272, 205);
             this.telefoon_Input.Name = "telefoon_Input";
@@ -137,16 +141,20 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Geboorte datum:";
             // 
-            // dateTimePicker1
+            // Geboortedatum_datePicker
             // 
-            this.dateTimePicker1.AllowDrop = true;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(272, 250);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(350, 38);
-            this.dateTimePicker1.TabIndex = 11;
-            this.dateTimePicker1.Value = new System.DateTime(2025, 5, 12, 13, 14, 48, 0);
+            this.Geboortedatum_datePicker.AllowDrop = true;
+            this.Geboortedatum_datePicker.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.Geboortedatum_datePicker.CalendarTitleForeColor = System.Drawing.Color.Black;
+            this.Geboortedatum_datePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Geboortedatum_datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Geboortedatum_datePicker.Location = new System.Drawing.Point(272, 250);
+            this.Geboortedatum_datePicker.MaxDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.Geboortedatum_datePicker.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.Geboortedatum_datePicker.Name = "Geboortedatum_datePicker";
+            this.Geboortedatum_datePicker.Size = new System.Drawing.Size(350, 38);
+            this.Geboortedatum_datePicker.TabIndex = 11;
+            this.Geboortedatum_datePicker.Value = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             // 
             // radioButton1
             // 
@@ -202,12 +210,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(709, 411);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Geboortedatum_datePicker);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.telefoon_Input);
             this.Controls.Add(this.label5);
@@ -221,7 +230,7 @@
             this.Name = "Form1";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Aanmeld formulier";
+            this.Text = ".";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,7 +248,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox telefoon_Input;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Geboortedatum_datePicker;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
