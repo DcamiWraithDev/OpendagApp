@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Drawing;
-using System.IO;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using OpendagApplicatie;
 
 namespace OpendagApplicatie
 {
@@ -15,10 +14,15 @@ namespace OpendagApplicatie
             InitializeComponent();
             SetUpTextBoxEvents();
             telefoon_Input.Text = "06-";
-            Geboortedatum_datePicker.MinDate = new DateTime(2000, 1, 1);
-            Geboortedatum_datePicker.Value = Geboortedatum_datePicker.MinDate;
-            Form2 form2 = new Form2();
-            form2.Show();
+            BeheerPaneel.VisibleChanged += BeheerPaneel_VisibleChanged;
+        }
+
+        private void BeheerPaneel_VisibleChanged(object sender, EventArgs e)
+        {
+            if (BeheerPaneel.Visible)
+            {
+                LaadAanmeldingen();
+            }
         }
 
         private void SetUpTextBoxEvents()
@@ -38,101 +42,17 @@ namespace OpendagApplicatie
                 Email = email_Input.Text.Trim(),
                 Telefoon = telefoon_Input.Text.Trim(),
                 Geboortedatum = Geboortedatum_datePicker.Value,
-                Leeftijd = BerekenLeeftijd(Geboortedatum_datePicker.Value),
+                Leeftijd = FormValidation.BerekenLeeftijd(Geboortedatum_datePicker.Value),
                 SelectedRadioButton = GetSelectedRadioButtonText()
             };
 
-            bool isValid = ValidateForm(data);
+            bool isValid = FormValidation.Validate(data, this);
 
             if (isValid)
             {
-                SaveDataToCSV(data);
+                GetCSV.SaveToCsv(data);
                 MessageBox.Show("Succesvol verstuurd!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private bool ValidateForm(dynamic data)
-        {
-            bool isValid = true;
-
-            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "OpendagApp", "OpendagApplicatie", "CSV_FILE");
-            string filePath = Path.Combine(folderPath, "form_data.csv");
-
-            if (string.IsNullOrWhiteSpace(data.SelectedRadioButton))
-            {
-                radioButton1.ForeColor = Color.Red;
-                radioButton2.ForeColor = Color.Red;
-                radioButton3.ForeColor = Color.Red;
-                isValid = false;
-            }
-            else
-            {
-                radioButton1.ForeColor = Color.Black;
-                radioButton2.ForeColor = Color.Black;
-                radioButton3.ForeColor = Color.Black;
-            }
-
-            if (string.IsNullOrWhiteSpace(data.Voornaam))
-            {
-                SetError(voornaam_Input, "Voornaam is niet ingevuld");
-                isValid = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(data.Achternaam))
-            {
-                SetError(achternaam_Input, "Achternaam is niet ingevuld");
-                isValid = false;
-            }
-
-            if (!Regex.IsMatch(data.Email, @"^[A-Za-z0-9]{2,}@[A-Za-z0-9]{2,}\.[A-Za-z]{1,4}$"))
-            {
-                SetError(email_Input, "Email adres is ongeldig");
-                isValid = false;
-            }
-
-            if (!Regex.IsMatch(data.Telefoon, @"^06-\d{8}$"))
-            {
-                SetError(telefoon_Input, "Telefoonnummer is ongeldig");
-                isValid = false;
-            }
-
-            if (File.Exists(filePath))
-            {
-                var lines = File.ReadAllLines(filePath);
-                foreach (var line in lines)
-                {
-                    var values = line.Split(',');
-                    if (values.Length < 4) continue;
-
-                    if (data.Voornaam == values[0] && data.Achternaam == values[1])
-                    {
-                        SetError(voornaam_Input, "Deze voornaam en achternaam combinatie is al in gebruik!");
-                        SetError(achternaam_Input, "Deze voornaam en achternaam combinatie is al in gebruik!");
-                        isValid = false;
-                    }
-
-                    if (data.Email == values[2])
-                    {
-                        SetError(email_Input, "Deze email is al in gebruik!");
-                        isValid = false;
-                    }
-
-                    if (data.Telefoon == values[3])
-                    {
-                        SetError(telefoon_Input, "Dit telefoonnummer is al in gebruik!");
-                        isValid = false;
-                    }
-                }
-            }
-
-            return isValid;
-        }
-
-
-        private void SetError(TextBox textBox, string message)
-        {
-            textBox.ForeColor = Color.Red;
-            textBox.Text = message;
         }
 
         private void ClearRedText(TextBox textBox)
@@ -161,47 +81,49 @@ namespace OpendagApplicatie
             return string.Empty;
         }
 
-        private int BerekenLeeftijd(DateTime geboortedatum)
+        public void ShowError(Label label, string message)
         {
-            DateTime today = DateTime.Today;
-            int leeftijd = today.Year - geboortedatum.Year;
-
-            if (today < geboortedatum.AddYears(leeftijd))
-                leeftijd--;
-
-            return leeftijd;
-        }
-
-        private void SaveDataToCSV(dynamic data)
-        {
-            // Haal de map op waar de .exe zich bevindt
-            string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
-
-            // Zoek naar een CSV-bestand in dezelfde map
-            string[] csvFiles = Directory.GetFiles(exeDirectory, "*.csv");
-
-            string filePath;
-
-            if (csvFiles.Length > 0)
+            if (string.IsNullOrEmpty(message))
             {
-                filePath = csvFiles[0]; // Gebruik het eerste gevonden .csv-bestand
+                label.Visible = false;
+                label.Text = "";
             }
             else
             {
-                // Geen CSV-bestand gevonden, dus maak een nieuwe aan met standaardnaam
-                filePath = Path.Combine(exeDirectory, "form_data.csv");
+                label.Text = message;
+                label.Visible = true;
             }
+        }
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            LaadAanmeldingen();
+        }
 
-            bool fileExists = File.Exists(filePath);
+        private void LaadAanmeldingen()
+        {
+            var telling = GetCSV.LeesAanmeldingen();
 
-            using (var writer = new StreamWriter(filePath, append: true))
+            totaalLabel.Text = $"Totaal aanmeldingen: {telling.Totaal}";
+            mei20Label.Text = $"Aanmeldingen 20 Mei: {telling.Mei20}";
+            mei27Label.Text = $"Aanmeldingen 27 Mei: {telling.Mei27}";
+            juni3Label.Text = $"Aanmeldingen 3 Juni: {telling.Juni3}";
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            AanmeldPaneel.Visible = true;
+            BeheerPaneel.Visible = false;
+        }
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+
+            string wachtwoord = BeheerInputfield.Text.Trim();
+
+            if (FormValidation.ValidateLogin(wachtwoord, this))
             {
-                if (!fileExists)
-                {
-                    writer.WriteLine("Voornaam,Achternaam,Email,Telefoon,Geboortedatum,RadioButton");
-                }
-
-                writer.WriteLine($"{data.Voornaam},{data.Achternaam},{data.Email},{data.Telefoon},{data.Geboortedatum:dd/MM/yyyy},{data.SelectedRadioButton}");
+                AanmeldPaneel.Visible = false;
+                BeheerPaneel.Visible = true;
             }
         }
     }
