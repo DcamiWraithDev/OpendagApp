@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using OpendagApplicatie;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace OpendagApplicatie
 {
@@ -52,6 +53,16 @@ namespace OpendagApplicatie
             {
                 GetCSV.SaveToCsv(data);
                 MessageBox.Show("Succesvol verstuurd!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                voornaam_Input.Text = "";
+                achternaam_Input.Text = "";
+                email_Input.Text = "";
+                telefoon_Input.Text = "";
+                Geboortedatum_datePicker.Value = DateTime.Parse("01/01/1900");
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+
             }
         }
 
@@ -113,6 +124,7 @@ namespace OpendagApplicatie
         {
             AanmeldPaneel.Visible = true;
             BeheerPaneel.Visible = false;
+            BeheerInputfield.Text = "";
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)
@@ -126,5 +138,6 @@ namespace OpendagApplicatie
                 BeheerPaneel.Visible = true;
             }
         }
+
     }
 }

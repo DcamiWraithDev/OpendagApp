@@ -63,7 +63,8 @@ namespace OpendagApplicatie
             }
             else
             {
-                int leeftijd = BerekenLeeftijd(data.Geboortedatum);
+                dynamic dynamic = BerekenLeeftijd(data.Geboortedatum);
+                int leeftijd = dynamic;
                 DateTime vijftienPlusEendag = data.Geboortedatum.AddYears(15);
                 if (DateTime.Today < vijftienPlusEendag)
                 {

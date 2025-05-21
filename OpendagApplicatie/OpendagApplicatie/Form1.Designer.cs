@@ -44,14 +44,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.AanmeldPaneel = new System.Windows.Forms.Panel();
-            this.BeheerPaneel = new System.Windows.Forms.Panel();
-            this.refreshBtn = new System.Windows.Forms.Button();
-            this.juni3Label = new System.Windows.Forms.Label();
-            this.mei27Label = new System.Windows.Forms.Label();
-            this.mei20Label = new System.Windows.Forms.Label();
-            this.totaalLabel = new System.Windows.Forms.Label();
-            this.LogoutBtn = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
             this.InloggenErrorLabel = new System.Windows.Forms.Label();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.BeheerInputfield = new System.Windows.Forms.TextBox();
@@ -62,6 +54,14 @@
             this.EmailErrorLabel = new System.Windows.Forms.Label();
             this.AchternaamErrorLabel = new System.Windows.Forms.Label();
             this.VoornaamErrorLabel = new System.Windows.Forms.Label();
+            this.BeheerPaneel = new System.Windows.Forms.Panel();
+            this.refreshBtn = new System.Windows.Forms.Button();
+            this.juni3Label = new System.Windows.Forms.Label();
+            this.mei27Label = new System.Windows.Forms.Label();
+            this.mei20Label = new System.Windows.Forms.Label();
+            this.totaalLabel = new System.Windows.Forms.Label();
+            this.LogoutBtn = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             this.AanmeldPaneel.SuspendLayout();
             this.BeheerPaneel.SuspendLayout();
             this.SuspendLayout();
@@ -260,99 +260,6 @@
             this.AanmeldPaneel.Size = new System.Drawing.Size(685, 600);
             this.AanmeldPaneel.TabIndex = 16;
             // 
-            // BeheerPaneel
-            // 
-            this.BeheerPaneel.BackColor = System.Drawing.Color.Transparent;
-            this.BeheerPaneel.Controls.Add(this.refreshBtn);
-            this.BeheerPaneel.Controls.Add(this.juni3Label);
-            this.BeheerPaneel.Controls.Add(this.mei27Label);
-            this.BeheerPaneel.Controls.Add(this.mei20Label);
-            this.BeheerPaneel.Controls.Add(this.totaalLabel);
-            this.BeheerPaneel.Controls.Add(this.LogoutBtn);
-            this.BeheerPaneel.Controls.Add(this.label16);
-            this.BeheerPaneel.Location = new System.Drawing.Point(12, 5);
-            this.BeheerPaneel.Name = "BeheerPaneel";
-            this.BeheerPaneel.Size = new System.Drawing.Size(685, 600);
-            this.BeheerPaneel.TabIndex = 26;
-            this.BeheerPaneel.Visible = false;
-            // 
-            // refreshBtn
-            // 
-            this.refreshBtn.BackColor = System.Drawing.Color.ForestGreen;
-            this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.ForeColor = System.Drawing.Color.Snow;
-            this.refreshBtn.Location = new System.Drawing.Point(598, 83);
-            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(65, 65);
-            this.refreshBtn.TabIndex = 31;
-            this.refreshBtn.Text = "🔄";
-            this.refreshBtn.UseVisualStyleBackColor = false;
-            // 
-            // juni3Label
-            // 
-            this.juni3Label.AutoSize = true;
-            this.juni3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.juni3Label.Location = new System.Drawing.Point(36, 264);
-            this.juni3Label.Name = "juni3Label";
-            this.juni3Label.Size = new System.Drawing.Size(293, 31);
-            this.juni3Label.TabIndex = 30;
-            this.juni3Label.Text = "Aanmeldingen 3 Juni:";
-            // 
-            // mei27Label
-            // 
-            this.mei27Label.AutoSize = true;
-            this.mei27Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mei27Label.Location = new System.Drawing.Point(28, 224);
-            this.mei27Label.Name = "mei27Label";
-            this.mei27Label.Size = new System.Drawing.Size(301, 31);
-            this.mei27Label.TabIndex = 29;
-            this.mei27Label.Text = "Aanmeldingen 27 Mei:";
-            // 
-            // mei20Label
-            // 
-            this.mei20Label.AutoSize = true;
-            this.mei20Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mei20Label.Location = new System.Drawing.Point(28, 189);
-            this.mei20Label.Name = "mei20Label";
-            this.mei20Label.Size = new System.Drawing.Size(301, 31);
-            this.mei20Label.TabIndex = 28;
-            this.mei20Label.Text = "Aanmeldingen 20 Mei:";
-            // 
-            // totaalLabel
-            // 
-            this.totaalLabel.AutoSize = true;
-            this.totaalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totaalLabel.Location = new System.Drawing.Point(35, 149);
-            this.totaalLabel.Name = "totaalLabel";
-            this.totaalLabel.Size = new System.Drawing.Size(294, 31);
-            this.totaalLabel.TabIndex = 27;
-            this.totaalLabel.Text = "Totaal aanmeldingen:";
-            // 
-            // LogoutBtn
-            // 
-            this.LogoutBtn.BackColor = System.Drawing.Color.Red;
-            this.LogoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutBtn.ForeColor = System.Drawing.Color.White;
-            this.LogoutBtn.Location = new System.Drawing.Point(0, 575);
-            this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LogoutBtn.Size = new System.Drawing.Size(80, 25);
-            this.LogoutBtn.TabIndex = 24;
-            this.LogoutBtn.Text = "Loguit";
-            this.LogoutBtn.UseVisualStyleBackColor = false;
-            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(32, 10);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(631, 54);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Aanmeld formulier Opendag";
-            // 
             // InloggenErrorLabel
             // 
             this.InloggenErrorLabel.AutoSize = true;
@@ -471,14 +378,107 @@
             this.VoornaamErrorLabel.Text = "ERROR";
             this.VoornaamErrorLabel.Visible = false;
             // 
+            // BeheerPaneel
+            // 
+            this.BeheerPaneel.BackColor = System.Drawing.Color.Transparent;
+            this.BeheerPaneel.Controls.Add(this.refreshBtn);
+            this.BeheerPaneel.Controls.Add(this.juni3Label);
+            this.BeheerPaneel.Controls.Add(this.mei27Label);
+            this.BeheerPaneel.Controls.Add(this.mei20Label);
+            this.BeheerPaneel.Controls.Add(this.totaalLabel);
+            this.BeheerPaneel.Controls.Add(this.LogoutBtn);
+            this.BeheerPaneel.Controls.Add(this.label16);
+            this.BeheerPaneel.Location = new System.Drawing.Point(12, 5);
+            this.BeheerPaneel.Name = "BeheerPaneel";
+            this.BeheerPaneel.Size = new System.Drawing.Size(685, 600);
+            this.BeheerPaneel.TabIndex = 26;
+            this.BeheerPaneel.Visible = false;
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.BackColor = System.Drawing.Color.ForestGreen;
+            this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.ForeColor = System.Drawing.Color.Snow;
+            this.refreshBtn.Location = new System.Drawing.Point(598, 83);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(65, 65);
+            this.refreshBtn.TabIndex = 31;
+            this.refreshBtn.Text = "🔄";
+            this.refreshBtn.UseVisualStyleBackColor = false;
+            // 
+            // juni3Label
+            // 
+            this.juni3Label.AutoSize = true;
+            this.juni3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.juni3Label.Location = new System.Drawing.Point(36, 264);
+            this.juni3Label.Name = "juni3Label";
+            this.juni3Label.Size = new System.Drawing.Size(293, 31);
+            this.juni3Label.TabIndex = 30;
+            this.juni3Label.Text = "Aanmeldingen 3 Juni:";
+            // 
+            // mei27Label
+            // 
+            this.mei27Label.AutoSize = true;
+            this.mei27Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mei27Label.Location = new System.Drawing.Point(28, 224);
+            this.mei27Label.Name = "mei27Label";
+            this.mei27Label.Size = new System.Drawing.Size(301, 31);
+            this.mei27Label.TabIndex = 29;
+            this.mei27Label.Text = "Aanmeldingen 27 Mei:";
+            // 
+            // mei20Label
+            // 
+            this.mei20Label.AutoSize = true;
+            this.mei20Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mei20Label.Location = new System.Drawing.Point(28, 189);
+            this.mei20Label.Name = "mei20Label";
+            this.mei20Label.Size = new System.Drawing.Size(301, 31);
+            this.mei20Label.TabIndex = 28;
+            this.mei20Label.Text = "Aanmeldingen 20 Mei:";
+            // 
+            // totaalLabel
+            // 
+            this.totaalLabel.AutoSize = true;
+            this.totaalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totaalLabel.Location = new System.Drawing.Point(35, 149);
+            this.totaalLabel.Name = "totaalLabel";
+            this.totaalLabel.Size = new System.Drawing.Size(294, 31);
+            this.totaalLabel.TabIndex = 27;
+            this.totaalLabel.Text = "Totaal aanmeldingen:";
+            // 
+            // LogoutBtn
+            // 
+            this.LogoutBtn.BackColor = System.Drawing.Color.Red;
+            this.LogoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutBtn.ForeColor = System.Drawing.Color.White;
+            this.LogoutBtn.Location = new System.Drawing.Point(0, 575);
+            this.LogoutBtn.Name = "LogoutBtn";
+            this.LogoutBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LogoutBtn.Size = new System.Drawing.Size(80, 25);
+            this.LogoutBtn.TabIndex = 24;
+            this.LogoutBtn.Text = "Loguit";
+            this.LogoutBtn.UseVisualStyleBackColor = false;
+            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(32, 10);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(631, 54);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Aanmeld formulier Opendag";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(709, 611);
-            this.Controls.Add(this.BeheerPaneel);
             this.Controls.Add(this.AanmeldPaneel);
+            this.Controls.Add(this.BeheerPaneel);
             this.Name = "Form1";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
