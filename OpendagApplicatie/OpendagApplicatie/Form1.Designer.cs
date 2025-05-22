@@ -359,7 +359,7 @@
             this.AchternaamErrorLabel.AutoSize = true;
             this.AchternaamErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AchternaamErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.AchternaamErrorLabel.Location = new System.Drawing.Point(252, 183);
+            this.AchternaamErrorLabel.Location = new System.Drawing.Point(106, 183);
             this.AchternaamErrorLabel.Name = "AchternaamErrorLabel";
             this.AchternaamErrorLabel.Size = new System.Drawing.Size(85, 25);
             this.AchternaamErrorLabel.TabIndex = 17;
@@ -371,7 +371,7 @@
             this.VoornaamErrorLabel.AutoSize = true;
             this.VoornaamErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VoornaamErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.VoornaamErrorLabel.Location = new System.Drawing.Point(252, 108);
+            this.VoornaamErrorLabel.Location = new System.Drawing.Point(106, 108);
             this.VoornaamErrorLabel.Name = "VoornaamErrorLabel";
             this.VoornaamErrorLabel.Size = new System.Drawing.Size(85, 25);
             this.VoornaamErrorLabel.TabIndex = 16;
